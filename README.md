@@ -44,9 +44,12 @@ Percentage of households where women make decisions jointly or independently acr
 I also collected and processed PM2.5 daily average air quality data for 10 Indian cities from India's Central Pollution Control Board (CPCB) portal. I cleaned and processed this in R and computed a national average across cities. The clean CSV is in the output folder.
 
 ---
-
+```
 ## Files
-
+├── Figure_1.R
+├── Table_A1.R
+├── Table_A2.R
+├── Table_A7.R
 ├── output/
 │   ├── figure1.pdf
 │   ├── figure1.png
@@ -63,7 +66,7 @@ I also collected and processed PM2.5 daily average air quality data for 10 India
 │       └── tableA7.tex
 │
 └── README.md
-
+```
 ---
 
 ## How to run it

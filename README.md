@@ -9,11 +9,11 @@ Full replication of a published economics paper using Malawi household panel dat
 
 ## What this is
 
-In January 2026 I was given a replication task as part of an RA application. The paper was:
+In January 2026, I was given a replication task as part of an RA application. The paper was:
 
 > *"Electricity price hikes raise firewood consumption and women's collection time in Malawi"*
 
-I had planned to use Stata but my licence expired before I could start. So I replicated everything in R instead, learning the workflow as I went.
+I had planned to use Stata, but my licence expired before I could start. So I replicated everything in R instead, learning the workflow as I went.
 
 I replicated all four requested outputs. The code is documented throughout with notes explaining the decisions I made, where I hit problems, and how I resolved them.
 
@@ -47,40 +47,38 @@ I also collected and processed PM2.5 daily average air quality data for 10 India
 
 ## Files
 
-```
-malawi-energy-replication/
-│
-├── Figure_1.R          # Weighted cooking fuel chart (Malawi IHPS 2019-20)
-├── Table_A1.R          # Annual household expenditure by survey round
-├── Table_A2.R          # Energy prices by fuel type
-├── Table_A7.R          # Women's decision-making (DHS 2015-16)
-│
 ├── output/
-│   ├── figure1.pdf                                    # Figure 1
-│   ├── tableA1_Annual_household_expenditure_MWK.csv   # Table A1
-│   ├── tableA2_charcoal.csv                           # Table A2 (charcoal)
-│   ├── tableA2_electricity.csv                        # Table A2 (electricity)
-│   ├── tableA2_firewood.csv                           # Table A2 (firewood)
-│   └── tableA7_Measures_of_womens_decision_making_DHS_2015_16.csv
+│   ├── figure1.pdf
+│   ├── figure1.png
+│   └── tables/
+│       ├── tableA1_Annual_household_expenditure_MWK.csv
+│       ├── tableA1.tex
+│       ├── tableA2_charcoal.csv
+│       ├── tableA2_charcoal.tex
+│       ├── tableA2_electricity.csv
+│       ├── tableA2_electricity.tex
+│       ├── tableA2_firewood.csv
+│       ├── tableA2_firewood.tex
+│       ├── tableA7_Measures_of_womens_decision_making_DHS_2015_16.csv
+│       └── tableA7.tex
 │
 └── README.md
-```
 
 ---
 
 ## How to run it
 
-### Set the working directory
-
-At the top of each R file, set your working directory:
-
+### Set BASE_FOLDER
+Open each R file and change one line at the top to match your computer:
 ```r
 # Mac/Linux:
-setwd("/Users/yourname/Documents/malawi-energy-replication")
+BASE_FOLDER <- "/Users/yourname/Downloads/malawi-energy-replication"
 
 # Windows:
-# setwd("C:/Users/yourname/Documents/malawi-energy-replication")
+# BASE_FOLDER <- "C:/Users/yourname/Downloads/malawi-energy-replication"
 ```
+
+Then, place the raw data files in a `Raw_Data/` folder inside that directory and run each script.
 
 ### Install required packages
 

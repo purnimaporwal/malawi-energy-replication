@@ -41,18 +41,32 @@ Percentage of households where women make decisions jointly or independently acr
 
 ## Extra work: India air quality data
 
-I also collected and processed PM2.5 daily average air quality data for 10 Indian cities from India's Central Pollution Control Board (CPCB) portal. I cleaned and processed this in R and computed a national average across cities. The clean CSV is in the output folder.
+I also collected and processed PM2.5 daily average air quality data for 10 Indian cities from India's Central Pollution Control Board
+(CPCB) portal for 1 January 2025.
 
+The CPCB portal uses dynamic JavaScript layers and session-based tokens that resist standard automated scraping tools like rvest. So I performed a targeted manual scrape — queried the 24-hour daily Average for 10 geographically diverse cities, extracted the verified daily mean (µg/m³) for each, and formatted it into a research-ready CSV. I then cleaned and processed it in R and computed a 10-city national average.
+
+**10-city national average PM2.5 on 1 January 2025: 91.96 µg/m³**
+
+The raw data and cleaned output are in the repository; the R script documents exactly what was done and why automated scraping was not used.
 ---
-```
 ## Files
-├── Figure_1.R
-├── Table_A1.R
-├── Table_A2.R
-├── Table_A7.R
+```
+malawi-energy-replication/
+│
+├── Figure_1.R               # Weighted cooking fuel chart (Malawi IHPS 2019-20)
+├── Table_A1.R               # Annual household expenditure by survey round
+├── Table_A2.R               # Energy prices by fuel type
+├── Table_A7.R               # Women's decision-making (DHS 2015-16)
+├── Data_Scrapping.R         # PM2.5 data processing (Section B)
+│
+├── Data_Scrapping/
+│   └── CPCB_data(Sheet1).csv   # Raw PM2.5 data — 10 Indian cities, 1 Jan 2025
+│
 ├── output/
 │   ├── figure1.pdf
 │   ├── figure1.png
+│   ├── Final_Scrapped_Data_Purnima.csv   # Cleaned PM2.5 output
 │   └── tables/
 │       ├── tableA1_Annual_household_expenditure_MWK.csv
 │       ├── tableA1.tex

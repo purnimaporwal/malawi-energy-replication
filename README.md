@@ -3,15 +3,16 @@
 **RA Application Task | January 2026**
 **Language: R**
 
-Full replication of a published economics paper using Malawi household panel data, completed independently in R after my Stata licence expired mid-task.
+Full replication of the published Malawi energy paper in R, plus PM2.5 air quality data scraping for India: cooking fuel, household expenditure, energy prices, and women's decision-making.
 
 ---
 
 ## What this is
 
-In January 2026, I was given a replication task as part of an RA application. The paper was:
+In January 2026 I was given a replication task as part of an RA application. The paper was:
 
-> *"Electricity price hikes raise firewood consumption and women's collection time in Malawi"*
+**Aggarwal, R. and Steckel, J. C. (2025). "Electricity price hikes raise firewood consumption and women's collection time in Malawi." *Environmental Research: Energy*, 2, 025014.**
+[Read the paper](https://publications.pik-potsdam.de/pubman/item/item_32454_3/component/file_32455/Aggarwal_2025_Environ._Res.__Energy_2_025014.pdf)
 
 I had planned to use Stata, but my licence expired before I could start. So I replicated everything in R instead, learning the workflow as I went.
 
@@ -107,7 +108,7 @@ install.packages(c("haven", "dplyr", "xtable"))
 
 The raw data is not included in this repository. It comes from:
 
-- **Malawi IHPS:** [World Bank Microdata Library](https://microdata.worldbank.org/index.php/catalog/2248) — download `hh_unbalanced_panel.dta` and place in `Data_Raw/`
+- **Malawi IHPS:** [World Bank Microdata Library](https://microdata.worldbank.org/index.php/catalog/2248) — download `hh_unbalanced_panel.dta` and place in `Raw_Data/`
 - **DHS 2015-16 Malawi:** [DHS Program](https://dhsprogram.com/data/dataset/Malawi_Standard-DHS_2015.cfm) — requires free registration
 - **India CPCB air quality:** [CPCB National Air Quality Index](https://app.cpcbccr.com/AQI_India/) — manually collected
 
